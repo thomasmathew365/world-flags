@@ -13,6 +13,10 @@ export default function useLocalCountriesData() {
           'countriesData',
           response && JSON.stringify(parseCountryData(response.data))
         );
+        window.localStorage.setItem(
+          'rawCountriesData',
+          response && JSON.stringify(response.data)
+        );
         setIsDataSet(true);
       });
     } else {

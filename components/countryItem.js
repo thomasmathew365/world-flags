@@ -9,6 +9,7 @@ const StyledContainer = styled.div`
   @media (min-width: 1440px) {
     width: 20%;
     margin-right: 5%;
+    display: inline-block;
   }
 `;
 
@@ -19,7 +20,7 @@ const Img = styled.img`
   object-fit: cover;
   background: white;
   @media (min-width: 1440px) {
-    height: 100px;
+    height: 200px;
   }
 `;
 

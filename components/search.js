@@ -32,13 +32,19 @@ const FontAwesomeIconContainer = styled.div`
   padding: 10px;
 `;
 
-export default function Search() {
+export default function Search({ searchTerm, setSearchTerm }) {
   return (
     <SearchContainer>
       <FontAwesomeIconContainer>
         <FontAwesomeIcon icon={faSearch} />
       </FontAwesomeIconContainer>
-      <SearchInput placeholder={`search for a country..`} />
+      <SearchInput
+        placeholder={`search for a country..`}
+        value={searchTerm}
+        onChange={(e) => {
+          setSearchTerm(e.target.value);
+        }}
+      />
     </SearchContainer>
   );
 }

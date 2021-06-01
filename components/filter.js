@@ -21,7 +21,10 @@ const FilterBox = styled.div`
   border: none;
   padding: 10px;
   padding-right: 30px;
-  color: ${(props) => props.theme.primaryText};
+  color: ${(props) => {
+    console.log(props);
+    return props.theme.primaryText;
+  }};
   display: inline-block;
 `;
 
@@ -37,7 +40,7 @@ const FilterDropBox = styled.div`
   margin-top: 5px;
 `;
 
-export default function Filter({ setRegion }) {
+export default function Filter({ setRegion, region, isDisabled }) {
   const [dropped, setDropped] = useState(false);
   return (
     <FilterContainer>
@@ -46,9 +49,9 @@ export default function Filter({ setRegion }) {
           setDropped(!dropped);
         }}
       >
-        Filter by Region
+        {`${region && !isDisabled ? region : `Filter by Region`}`}
       </FilterBox>
-      {dropped && (
+      {dropped && !isDisabled && (
         <FilterDropBox>
           {REGION_LIST.map((region, k) => {
             return (
