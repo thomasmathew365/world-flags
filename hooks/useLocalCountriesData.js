@@ -8,7 +8,7 @@ export default function useLocalCountriesData() {
   useEffect(() => {
     const localCountriesData = window.localStorage.getItem('countriesData');
     if (!localCountriesData) {
-      axios.get(`https://restcountries.eu/rest/v2/all`).then((response) => {
+      axios.get(`https://restcountries.com/v2/all`).then((response) => {
         window.localStorage.setItem(
           'countriesData',
           response && JSON.stringify(parseCountryData(response.data))
