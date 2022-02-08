@@ -32,7 +32,7 @@ const FontAwesomeIconContainer = styled.div`
 export default function NavBar({ theme, toggleTheme }) {
   return (
     <NavContainer>
-      <NavTitle>Where in the world ?</NavTitle>
+      <NavTitle>Select a region</NavTitle>
       <NavThemeToggle onClick={toggleTheme}>
         <FontAwesomeIconContainer>
           <FontAwesomeIcon icon={theme === 'light' ? farMoon : fasMoon} />
